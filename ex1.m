@@ -19,3 +19,9 @@ title('figure£º2-D Bar Chart')
 subplot(1,2,2)
 bar3(x,y)
 title('Figure:3-D Bar Chart')
+
+#
+[x,y]=meshgrid(-2:0.2:2);
+z=x.*exp(-x.^2-y.^2);
+mesh(x,y,z);
+colormap([0,0,1])
