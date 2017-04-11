@@ -60,9 +60,4 @@ contour3(x,y,z,20)
 title('Figure 2: 3-D Contour Plot')
 pause
 
-#
-[x,y]=meshgrid(-2:0.2:2);
-z=x.*exp(-x.^2-y.^2);
-mesh(x,y,z);
-colormap([0,0,1])
 
