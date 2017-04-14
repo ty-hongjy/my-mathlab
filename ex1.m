@@ -25,3 +25,5 @@ title('Figure:3-D Bar Chart')
 z=x.*exp(-x.^2-y.^2);
 mesh(x,y,z);
 colormap([0,0,1])
+
+[x1,x2,y,i1,i2]=solve('i1(2+x1)=4','i1(x1+y)=10','i2(2+x2)=8','i2(x2+y)=11','4-x1*i2+10=8-x2*i2+11')
