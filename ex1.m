@@ -64,8 +64,9 @@ contour3(x,y,z,20)
 title('Figure 2: 3-D Contour Plot')
 pause
 
-[x1,x2,y,i1,i2]=solve('i1(2+x1)=4','i1(x1+y)=10','i2(2+x2)=8','i2(x2+y)=11','4-x1*i2+10=8-x2*i2+11')
+#[x1,x2,y,i1,i2]=solve('i1(2+x1)=4','i1(x1+y)=10','i2(2+x2)=8','i2(x2+y)=11','4-x1*i2+10=8-x2*i2+11')
 
+pkg load symbolic
 syms x1 x2 y i1 i2
 solve(i1*(2+x1)==4,i1*(x1+y)==10,i2*(2+x2)==8,i2*(x2+y)==11,4-x1*i1+10==8-x2*i2+11,x1,x2,y,i1,i2)
 
@@ -73,7 +74,26 @@ solve(i1*(2+x1)-4==0,i1*(x1+y)-10==0,i2*(2+x2)-8==0,i2*(x2+y)-11==0,4-x1*i1+10-8
 [x1,x2,y,i1,i2]=solve(i1*(2+x1)-4==0,i1*(x1+y)-10==0,i2*(2+x2)-8==0,i2*(x2+y)-11==0,4-x1*i1+10-8+x2*i2-11==0,x1,x2,y,i1,i2)
 
 solve(i1*(2+x1)-4,i1*(x1+y)-10,i2*(2+x2)-8,i2*(x2+y)-11,4-x1*i1+10-8+x2*i2-11,x1,x2,y,i1,i2)
- 
- syms x y
- [x,y]=solve(x^2+y-6==0,y^2+x-6==0,x,y)
- 
+
+syms x y
+[x,y]=solve(x^2+y-6==0,y^2+x-6==0,x,y)
+
+syms x y z
+f=x^2+y^2+z^2
+fval=subs(f,[x,y],[1,2])
+
+syms x y 
+s1=simplify(cos(x)^2 - sin(x)^2)
+
+syms x
+y=sin(x)/x
+s=limit(y,x,0)
+x=-1:0.02:1
+y=sin(x)./x
+plot(x,y,'k')
+
+syms x y
+f=x^2*y + 2*x*y +y*y
+d1=diff(f,x,1)
+d2=diff(f,y,1)
+
